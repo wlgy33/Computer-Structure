@@ -54,4 +54,34 @@ removeFirst() 메소드를 사용하면 가장 첫 데이터가 removeLast()를 
 
 LinkedList의 값이 제거되는 방식은 위와 같다. 삭제 대상 노드의 이전의 노드가 삭제 대상 노드의 다음의 노드를 가리키게 하고 해당 노드는 삭제 된다.
 
+### 크기 구하기
+```java
+LinkedList<Integer> list = new LinkedList<Integer>(Arrays.asList(1,2,3));
+System.out.println(list.size()); // list 크기 : 3
+```
+LinkedList의 크기를 구하려면 LinkedList의 size() 메소드를 사용한다.
 
+### LinkedList의 내부 값 
+```java
+LinkedList<Integer> list = new LinkedList<Integer>(Arrays.asList(1,2,3));
+
+System.out.println(list.get(0));          // 0번째 index 출력
+				
+for(Integer i : list) {                   // for문을 통한 전체출력
+    System.out.println(i);
+}
+
+Iterator<Integer> iter = list.iterator(); // Iterator 선언 
+while(iter.hasNext()){                    // 다음값이 있는지 체크
+    System.out.println(iter.next());      // 값 출력
+}
+```
+LinkedList의 get(index) 메소드를 사용하면 LinkedList의 원하는 index의 값이 리턴된다. 전체 출력은 대부분 for문을 통해서 출력을 하고 Iterator를 사용해서 출력을 할 수도 있다. LinkedList의 경우 인덱스를 사용하여 연산을 수행할 수 있도록 get(index) 메소드를 제공하지만, 메소드 내부의 동작은 순차 탐색으로 이루어져 있어 ArrayList의 get(index)메서드보다 속도가 느리다.
+
+### LinkedList 값 검색
+```java
+ArrayList<Integer> list = new ArrayList<Integer>(Arrays.asList(1,2,3));
+System.out.println(list.contains(1)); // list에 1이 있는지 검색 : true
+System.out.println(list.indexOf(1)); // 1이 있는 index반환 없으면 -1
+```
+LinkedList에서 찾고자 하는 값을 검색하려면 LinkedList의 contains(value) 메소드를 사용하면 된다다. 만약 값이 있다면 true가 리턴되고 값이 없다면 false가 리턴된다. 값을 있는 index를 찾으려면 indexOf(value) 메소드를 사용하면 되고 만약 값이 없다면 -1을 리턴된다.
