@@ -12,13 +12,13 @@
 ### 구현
 ```java
 class Stack {
-    private static int maxCount = 100;
-    private int size;
-    private int[] values;
+    static final int MAX = 100;
+    int size;
+    int[] values;
 
     public Stack() {
         size = 0;
-        values = new int[maxCount];
+        values = new int[MAX];
     }
 
     // 가장 위에 값 삽입
